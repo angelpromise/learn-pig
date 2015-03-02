@@ -17,13 +17,14 @@ import org.apache.pig.impl.logicalLayer.schema.Schema;
 public class SampleEvalFunc extends EvalFunc<Tuple>{
 
 	private Log log = this.getLogger();
-	private StringBuffer stb;
-	
+	private StringBuffer stb = new StringBuffer();
+	/**
 	public SampleEvalFunc(){
 		super();
 		this.stb = new StringBuffer();
 		log.info("The Schema Fields=>" + this.getInputSchema().getFields().toString());
 	}
+	*/
 	@Override
 	public Tuple exec(Tuple tuple) throws IOException {
 		if(tuple == null || tuple.size() == 0){

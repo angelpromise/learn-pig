@@ -59,11 +59,11 @@ public class AlgebraicEvalFunc extends EvalFunc<Long> implements Algebraic{
 	 * @author angel
 	 *
 	 */
-	public static class Final extends EvalFunc<Tuple>{
+	public static class Final extends EvalFunc<Long>{
 
 		@Override
-		public Tuple exec(Tuple input) throws IOException {
-			return TupleFactory.getInstance().newTuple(sum(input));
+		public Long exec(Tuple input) throws IOException {
+			return sum(input);
 		}
 		
 	}
@@ -96,7 +96,7 @@ public class AlgebraicEvalFunc extends EvalFunc<Long> implements Algebraic{
 	    }
 		return Long.valueOf(1);
 	}
-
+	
 	private static long sum(Tuple tuple) throws ExecException{
 		/**
 		 * Intermed : 接受来自Initial的数据，输入的数据是Map-reduce中Map的每条数据：bag：{(1),(2),(0)} 
